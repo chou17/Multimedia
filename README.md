@@ -1,4 +1,5 @@
 facial_recognition.m
+
 Nearest Neighbor Classification
 • For the test sample, find the nearest sample in the 
 training set.
@@ -6,7 +7,9 @@ training set.
 • SAD – sum of absolute distance
 • Assign the label of the NN to the test sample
 
+
 gaussian_blur.m
+
 (a) Creates the Gaussian filter with hsize = 3x3, 7x7 and 13x13. Apply image 
 convolution to image 柴犬飛飛.jpg by three Gaussian filters, and compute the 
 PSNR with the original image. [3 image]
