@@ -2,8 +2,8 @@ facial_recognition.m
 
 Nearest Neighbor Classification.
 For the test sample, find the nearest sample in the training set.
-The nearest neighbor can be found using SAD – sum of absolute distance
-Assign the label of the NN to the test sample
+The nearest neighbor can be found using SAD – sum of absolute distance.
+Assign the label of the NN to the test sample.
 
 
 gaussian_blur.m
