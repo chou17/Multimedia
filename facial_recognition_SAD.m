@@ -26,13 +26,13 @@ for i=1:99
     for j=1:13
         for k=1:99
             for m=1:13
-                diff_matrix = imabsdiff(test_img{k,m},training_img{i,j});%相減求絕對值
-                S=sum(diff_matrix,'all');%所有像素差相加
+                diff_matrix = imabsdiff(test_img{k,m},training_img{i,j}); %Difference between the 2 numbers
+                S=sum(diff_matrix,'all'); %sum
                 if i==1
                     result(k,m,j) = S;
                 else
                     result(k,m,j+13*(i-1)) = S;
-                end%存入所有結果
+                end
             end
          end
     end
@@ -40,19 +40,18 @@ end
 corr = 0;
 for i=1:99
     for j=1:13
-        val = min(result,[],[1 2]);%求出最小值
+        val = min(result,[],[1 2]);%find the minimum value
         if i==1
             [r,c] = find(result(:,:,j)==val(1,1,j));
         else
             [r,c] = find(result(:,:,j+13*(i-1))==val(1,1,j+13*(i-1)));
-        end%找出最小值的位置(row為結果為第幾人)
-        a(i,j) = r(1);%存入比對結果
+        end%find the location of minimum value(row is the result)
+        a(i,j) = r(1);%store the result
         if a(i,j)==i
-            corr = corr+1;%計算正確張數
+            corr = corr+1;%count the correct number
         end
     end
 end
 
-corr_rate = corr/1287;%計算正確率
+corr_rate = corr/1287;%Calculate the correct rate
 fprintf('The correct rate of this program is %.2f%%\n',corr_rate*100);
-
